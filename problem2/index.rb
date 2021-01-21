@@ -9,22 +9,28 @@ count = 0
 loop do
     
   #400万以上になったらbreak
-  if num_f >= 400
+  if num_f >= 4000000
     break
   end
 
-  num_f += ary[count]
-
+  if count == 0
+    num_f += ary[count]
+  else
+    num_f += ary[count - 1]
+  end
+  
   ary.push(num_f)
   
-count += 1
+  count += 1
 
 end
 
 p ary
 
 ary.each do |f|
-    total_f + f
+  if f % 2 != 0
+    total_f += f
+  end
 end
 
 p total_f
