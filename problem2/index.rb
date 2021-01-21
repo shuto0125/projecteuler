@@ -2,18 +2,29 @@ total_f = 0
 
 num_f = 1
 
-#400万回繰り返す
-4000000.times do |i|
-  num = i + 1
-  
-  if num == num_f
+ary =[1]
 
-    #今の数を代入
-    num_f += num
+count = 0
 
-    total_f += num_f
+loop do
+    
+  #400万以上になったらbreak
+  if num_f >= 400
+    break
   end
 
+  num_f += ary[count]
+
+  ary.push(num_f)
+  
+count += 1
+
+end
+
+p ary
+
+ary.each do |f|
+    total_f + f
 end
 
 p total_f
