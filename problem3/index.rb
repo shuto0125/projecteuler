@@ -28,7 +28,6 @@ require 'prime'
 
   end
   
-
 end
 
 p my_prime
@@ -56,3 +55,17 @@ end
 
 p Prime.prime?(my_prime.last) 
 p my_prime.last
+
+
+
+
+#最適解
+
+max_num = 600851475143
+def soinsu(n)
+  2.step(n - 1) do |i|
+    return [i, soinsu(n / i)] if(n % i == 0)
+  end
+  [1, n]
+end
+p soinsu(max_num)
