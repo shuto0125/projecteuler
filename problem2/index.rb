@@ -28,9 +28,11 @@ end
 p ary
 
 ary.each do |f|
-  if f % 2 != 0
+  if f.even?
     total_f += f
   end
 end
 
 p total_f
+
+
